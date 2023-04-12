@@ -1,3 +1,1 @@
-function test() {
-  
-}
+module.exports = require('./.eslintrc.json')
