@@ -1,16 +1,16 @@
 module.exports = {
   rules: {
     '@typescript-eslint/explicit-member-accessibility': 'off',
-    '@angular-eslint/use-lifecycle-interface': ['error'],
-    '@angular-eslint/sort-lifecycle-methods': ['error'],
-    '@angular-eslint/no-lifecycle-call': ['error'],
-    '@angular-eslint/no-empty-lifecycle-method': ['error'],
-    '@angular-eslint/no-async-lifecycle-method': ['error'],
   },
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
       parser: '@typescript-eslint/parser',
+      parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: 'module',
+        project: './tsconfig.json', 
+      },
       plugins: ['@typescript-eslint', 'simple-import-sort', 'unused-imports'],
       rules: {
         'array-bracket-newline': ['warn', 'consistent'],
@@ -35,14 +35,14 @@ module.exports = {
         curly: ['warn', 'all'],
         'dot-location': ['warn', 'property'],
         'eol-last': 'warn',
-        '@typescript-eslint/func-call-spacing': 'error',
+        'func-call-spacing': 'warn',
         'function-call-argument-newline': ['warn', 'consistent'],
         'function-paren-newline': ['warn', 'multiline-arguments'],
         'generator-star-spacing': 'off',
         'implicit-arrow-linebreak': 'off',
         indent: 'off',
         '@typescript-eslint/indent': [
-          'error',
+          'warn',
           2,
           {
             SwitchCase: 1,
@@ -57,7 +57,7 @@ module.exports = {
 
         'keyword-spacing': 'off', // overridden by @typescript-eslint
         '@typescript-eslint/keyword-spacing': ['warn', { after: true, before: true }],
-        '@typescript-eslint/type-annotation-spacing': 'warn',
+
         'linebreak-style': 'off',
         'max-len': [
           'error',
@@ -81,18 +81,18 @@ module.exports = {
         'no-mixed-operators': ['error'],
         'no-mixed-spaces-and-tabs': 'error',
         'no-multi-spaces': 'error',
-        'no-multiple-empty-lines': ['warn', { max: 1, maxEOF: 0, maxBOF: 0 }], // overwritten NG default
+        'no-multiple-empty-lines': ['warn', { max: 1 }], // overwritten NG default
         'no-tabs': 'error',
         'no-trailing-spaces': 'warn',
         'no-unexpected-multiline': 'error',
-        'no-unused-vars': 'off', // off: conflict unused-imports/no-unused-vars
-        '@typescript-eslint/no-unused-vars': 'off', // off: conflict unused-imports/no-unused-vars
-        'unused-imports/no-unused-imports': 'error',
-        'unused-imports/no-unused-vars': [
-          'error',
-          { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
+
+        "@typescript-eslint/no-unused-vars": "off",
+		    "unused-imports/no-unused-imports": "error",
+		    "unused-imports/no-unused-vars": [
+          "warn",
+          { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
         ],
-        'no-duplicate-imports': 'error',
+        'no-duplicate-imports': 'warn',
 
         'no-useless-constructor': 'off', // overridden by @typescript-eslint
         '@typescript-eslint/no-useless-constructor': ['error'],
@@ -122,7 +122,6 @@ module.exports = {
         'space-before-function-paren': ['warn', { anonymous: 'always', named: 'never', asyncArrow: 'always' }],
         'space-in-parens': 'warn',
         'space-infix-ops': 'warn',
-        '@typescript-eslint/space-infix-ops': 'warn',
         'space-unary-ops': 'warn',
         'switch-colon-spacing': 'warn',
         'template-curly-spacing': 'warn',
@@ -132,9 +131,8 @@ module.exports = {
         'yield-star-spacing': 'error',
         'no-unused-expressions': 'error',
         'prefer-const': 'error',
-        'id-length': ['error', { min: 2, properties: 'never', exceptions: ['i', 'e', 'a', 'b', 'x', 'y', '_'] }], // TODO: remove some of these exceptions
         '@typescript-eslint/no-parameter-properties': 'off',
-        '@typescript-eslint/member-ordering': ['error'],
+        '@typescript-eslint/member-ordering': ['warn'],
         '@typescript-eslint/explicit-member-accessibility': [
           'error',
           {

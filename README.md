@@ -1,6 +1,4 @@
-# polware eslint-config <sup>[![Version Badge][npm-version-svg]][package-url]</sup>
-
-[![npm version](https://badge.fury.io/js/eslint-config-airbnb-base.svg)][package-url]
+# polware eslint-config
 
 ## Usage
 
@@ -8,18 +6,33 @@ Use this esLint config as a basis for you Angular projects.
 
 ### Installation
 
-  ```sh
-  npm i --save-dev jeroenpol/eslint-config
-```
-
-1. Install the correct versions of each package, which are listed by the command:
+1. Install the npm package
 
   ```sh
-  npm info "jeroenpol/eslint-config@latest" peerDependencies
+  npm i --save-dev @jeroenpol/eslint-config
   ```
 
-  If using **npm 5+**, use this shortcut
+2. Install peer dependencies using NPM 5+ and this command:
 
   ```sh
-  npx install-peerdeps --dev polware/eslint-config
+  npx install-peerdeps --dev @jeroenpol/eslint-config
+  ```
+
+3. Update your `.eslintrc` file to:
+
+  ```json
+  {
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "module"
+    },
+    "overrides": [
+      {
+        "files": ["*.ts", "*.tsx"],
+        "extends": ["@jeroenpol/eslint-config"]
+      }
+    ]
+  }
   ```
