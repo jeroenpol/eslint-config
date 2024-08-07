@@ -1,0 +1,6 @@
+{
+  "files": ["*.ts", "*.tsx"],
+  "parser": "@typescript-eslint/parser",
+  "extends": "./index.js",
+  "rules": {}
+}

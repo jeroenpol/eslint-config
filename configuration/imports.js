@@ -6,7 +6,6 @@ module.exports = {
       parserOptions: {
         ecmaVersion: 2020,
         sourceType: 'module',
-        project: './tsconfig.*json',
       },
       plugins: ['@typescript-eslint', 'simple-import-sort'],
       rules: {
@@ -15,6 +14,7 @@ module.exports = {
         'simple-import-sort/exports': 'error',
         'sort-imports': 'off',
         'import/order': 'off',
+        '@typescript-eslint/no-require-imports': 'error',
         'no-restricted-imports': [
           'error',
           {
