@@ -1,13 +1,10 @@
 {
   "name": "@jeroenpol/eslint-config",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "description": "ES Lint config made for Angular, configured by Polware",
   "main": "index.js",
   "exports": {
     ".": "./index.js",
-    "./configuration/best-practices": "./configuration/best-practices.js",
-    "./configuration/code-style": "./configuration/code-style.js",
-    "./configuration/imports": "./configuration/imports.js",
     "./package.json": "./package.json"
   },
   "scripts": {},
@@ -38,32 +35,30 @@
   },
   "homepage": "https://github.com/jeroenpol/eslint-config",
   "devDependencies": {
+    "@stylistic/eslint-plugin": "^2.8.0",
+    "@stylistic/eslint-plugin-ts": "^2.8.0",
+    "@typescript-eslint/eslint-plugin": "6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
     "eslint": "8.57.0",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-functional": "6.5.1",
-    "eslint-plugin-redundant-undefined": "^1.0.0",
     "eslint-plugin-rxjs-angular": "2.0.1",
     "eslint-plugin-simple-import-sort": "10.0.0",
     "eslint-plugin-sonarjs": "1.0.3",
     "eslint-plugin-unused-imports": "3.2.0",
-    "@typescript-eslint/eslint-plugin": "6.19.0",
-    "@typescript-eslint/parser": "^6.19.0",
     "typescript": "~5.4.5",
     "typescript-eslint": "^7.16.1"
   },
   "peerDependencies": {
-    "eslint": "8.57.0",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-functional": "6.5.1",
-    "eslint-plugin-redundant-undefined": "^1.0.0",
-    "eslint-plugin-rxjs-angular": "2.0.1",
-    "eslint-plugin-simple-import-sort": "10.0.0",
-    "eslint-plugin-sonarjs": "1.0.3",
-    "eslint-plugin-unused-imports": "3.2.0",
-    "@typescript-eslint/eslint-plugin": "6.19.0",
-    "@typescript-eslint/parser": "^6.19.0",
-    "typescript": "^5.0.0",
-    "typescript-eslint": "^7.16.1"
+    "@stylistic/eslint-plugin": ">=2",
+    "@stylistic/eslint-plugin-ts": ">=2",
+    "@typescript-eslint/eslint-plugin": ">=6",
+    "@typescript-eslint/parser": ">=6",
+    "eslint": ">=8",
+    "eslint-plugin-rxjs-angular": ">=2",
+    "eslint-plugin-simple-import-sort": ">=10",
+    "eslint-plugin-sonarjs": ">=1",
+    "eslint-plugin-unused-imports": ">=3",
+    "typescript": ">=5",
+    "typescript-eslint": ">=7"
   },
   "engines": {
     "node": "20"
