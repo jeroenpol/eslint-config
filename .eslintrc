@@ -1,5 +1,8 @@
 {
   "parser": "@typescript-eslint/parser",
-  "extends": "./index.js",
+  "parserOptions": {
+    "project": "tsconfig.json"
+  },
+  "extends": ["./configurations/stylistic.js"],
   "rules": {}
 }
