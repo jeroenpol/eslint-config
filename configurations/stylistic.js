@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const stylistic = require('@stylistic/eslint-plugin');
 
 const customized = stylistic.configs.customize({
