@@ -7,6 +7,7 @@ const customized = stylistic.configs.customize({
 
 export default [
   {
+    files: ['src/**/*.ts', 'src/**/*.tsx', 'src/**/*.js'],
     plugins: {
       '@stylistic': stylistic,
     },

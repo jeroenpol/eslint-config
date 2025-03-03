@@ -1,6 +1,6 @@
 {
   "name": "@jeroenpol/eslint-config",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "ES Lint config made for Angular, configured by Polware",
   "main": "index.mjs",
   "exports": {

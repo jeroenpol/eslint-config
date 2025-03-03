@@ -5,9 +5,7 @@ import tseslint from 'typescript-eslint';
 
 export default tseslint.config(tseslint.configs.recommendedTypeChecked,
   {
-    files: ['**/*.ts', '**/*.tsx', '**/*.js'],
-  },
-  {
+    files: ['src/**/*.ts', 'src/**/*.tsx', 'src/**/*.js'],
     plugins: { 'sonarjs': sonarjs, 'simple-import-sort': simpleImportSort, 'unused-imports': unusedImports, '@typescript-eslint': tseslint.plugin },
   languageOptions: {
     parserOptions: {
