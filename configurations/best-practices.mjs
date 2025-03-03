@@ -1,11 +1,20 @@
-module.exports = {
-  plugins: [
-    '@typescript-eslint',
-    'sonarjs',
-    'simple-import-sort',
-    'unused-imports',
-    'eslint-plugin-rxjs-angular',
-  ],
+import sonarjs from 'eslint-plugin-sonarjs';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import unusedImports from 'eslint-plugin-unused-imports';
+import tseslint from 'typescript-eslint';
+
+export default tseslint.config(tseslint.configs.recommendedTypeChecked,
+  {
+    files: ['**/*.ts', '**/*.tsx', '**/*.js'],
+  },
+  {
+    plugins: { 'sonarjs': sonarjs, 'simple-import-sort': simpleImportSort, 'unused-imports': unusedImports, '@typescript-eslint': tseslint.plugin },
+  languageOptions: {
+    parserOptions: {
+      projectService: true,
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
   rules: {
     // GENERAL
     'no-unreachable': 'error',
@@ -41,6 +50,7 @@ module.exports = {
     '@typescript-eslint/no-require-imports': 'error',
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
+    '@typescript-eslint/no-unused-vars': 'off',
     'unused-imports/no-unused-imports': 'error',
     'no-duplicate-imports': 'error',
     'no-useless-constructor': 'off', // duplicate of @typescript-eslint/no-useless-constructor
@@ -138,14 +148,5 @@ module.exports = {
     // ASYNCHRONOUS
     '@typescript-eslint/no-misused-promises': 'error',
     '@typescript-eslint/no-floating-promises': 'error',
-    'rxjs-angular/prefer-takeuntil': [ // check if this one is needed (first, take(1))
-      'error',
-      {
-        alias: ['takeUntilDestroyed'],
-        checkComplete: true,
-        checkDecorators: ['Component'],
-        checkDestroy: true,
-      },
-    ],
   },
-};
+});

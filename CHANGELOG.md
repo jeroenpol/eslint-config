@@ -1,3 +1,7 @@
+2.0.0 / 2025-03-03
+==================
+ - [major] ESLint 9.0 and flat config
+
 1.0.11 / 2024-09-18
 ==================
  - [minor] Utilize base configurations
