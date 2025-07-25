@@ -1,6 +1,6 @@
 {
   "name": "@jeroenpol/eslint-config",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "ES Lint config made for Angular, configured by Polware",
   "main": "index.mjs",
   "exports": {
@@ -41,7 +41,7 @@
     "@stylistic/eslint-plugin-ts": "^4.2.0",
     "@typescript-eslint/eslint-plugin": "8.8.1",
     "@typescript-eslint/parser": "^8.8.1",
-    "eslint": "^9.21.0",
+    "eslint": "^9.8.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-sonarjs": "3.0.2",
     "eslint-plugin-unused-imports": "4.1.4",
