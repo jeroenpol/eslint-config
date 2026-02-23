@@ -2,12 +2,10 @@ import tseslint from 'typescript-eslint';
 import bestPractices from './configurations/best-practices.mjs';
 import stylistic from './configurations/stylistic.mjs';
 
+export { default as bestPractices } from './configurations/best-practices.mjs';
+export { default as stylistic } from './configurations/stylistic.mjs';
+
 export default [
-  {
-    ignores: [
-      '**/*.mjs',
-    ]
-  },
   ...bestPractices,
   ...stylistic,
   {
