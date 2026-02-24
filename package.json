@@ -1,6 +1,6 @@
 {
   "name": "@jeroenpol/eslint-config",
-  "version": "2.1.2",
+  "version": "2.1.4",
   "description": "ESLint config made for Angular, configured by Polware",
   "main": "index.mjs",
   "exports": {
@@ -39,7 +39,12 @@
   },
   "homepage": "https://github.com/jeroenpol/eslint-config",
   "dependencies": {
+    "@nx/eslint-plugin": "^20.6.0",
     "@stylistic/eslint-plugin": "^4.2.0",
+    "angular-eslint": "^20.6.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jasmine": "^4.2.2",
+    "eslint-plugin-no-only-tests": "^3.3.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-sonarjs": "3.0.2",
     "eslint-plugin-unused-imports": "4.1.4",
