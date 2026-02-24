@@ -1,13 +1,31 @@
 import tseslint from 'typescript-eslint';
-import bestPractices from './configurations/best-practices.mjs';
-import stylistic from './configurations/stylistic.mjs';
 
-export { default as bestPractices } from './configurations/best-practices.mjs';
-export { default as stylistic } from './configurations/stylistic.mjs';
+import bestPracticesTS from './configurations/best-practices-ts.mjs';
+import bestPracticesHTML from './configurations/best-practices-html.mjs';
+import codeStyle from './configurations/code-style.mjs';
+
+export { default as bestPracticesTS } from './configurations/best-practices-ts.mjs';
+export { default as bestPracticesHTML } from './configurations/best-practices-html.mjs';
+export { default as codeStyle } from './configurations/code-style.mjs';
 
 export default [
-  ...bestPractices,
-  ...stylistic,
+  {
+    files: ['**/*.mjs'],
+    languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        projectService: {
+          allowDefaultProject: ['*.mjs'],
+        },
+      },
+      rules: {
+        '@typescript-eslint/no-unsafe-assignment': 'off',
+      },
+    },
+  },
+  ...bestPracticesTS,
+  ...bestPracticesHTML,
+  ...codeStyle,
   {
     files: ['*.spec.ts'],
     plugins: { '@typescript-eslint': tseslint.plugin },

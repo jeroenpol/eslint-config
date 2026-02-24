@@ -2,6 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": ".",
+    "allowJs": true,
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -15,5 +16,7 @@
     "lib": ["es2018", "dom"],
     "useDefineForClassFields": false,
     "strictNullChecks": true
-  }
+  },
+  "include": ["**/*.ts", "**/*.mts", "**/*.cts", "**/*.mjs", "**/*.js"],
+  "exclude": ["node_modules", "dist"]
 }

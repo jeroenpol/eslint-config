@@ -7,7 +7,7 @@ const customized = stylistic.configs.customize({
 
 export default [
   {
-    files: ['**/*.{ts,tsx,js,mjs,cjs}'],
+    files: ['**/*.ts', '**/*.js', '**/*.mjs'],
     plugins: {
       '@stylistic': stylistic,
     },
@@ -21,10 +21,11 @@ export default [
         'error',
         {
           arrays: 'always-multiline',
+          enums: 'always-multiline',
           objects: 'always-multiline',
           imports: 'always-multiline',
-          exports: 'never',
-          functions: 'never',
+          exports: 'always-multiline',
+          functions: 'always-multiline',
         },
       ],
       '@stylistic/dot-location': ['error', 'property'],
@@ -35,7 +36,7 @@ export default [
       '@stylistic/max-len': [
         'error',
         {
-          code: 120,
+          code: 140,
           ignoreRegExpLiterals: true,
           ignoreStrings: true,
           ignoreTemplateLiterals: true,
