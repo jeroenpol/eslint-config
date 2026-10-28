@@ -1,3 +1,8 @@
-import main from './index.mjs';
+import { defineConfig } from 'eslint/config';
 
-export default main;
+import polware from './index.mjs';
+
+export default defineConfig(
+  { ignores: ['test/fixtures/**'] },
+  polware({ tsconfigRootDir: import.meta.dirname }),
+);
