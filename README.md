@@ -66,7 +66,7 @@ export default defineConfig(
 | Entrypoint | Contents |
 |---|---|
 | `@jeroenpol/eslint-config` | Everything below |
-| `@jeroenpol/eslint-config/angular` | angular-eslint recommended + accessibility, inline templates and template rules |
+| `@jeroenpol/eslint-config/angular` | angular-eslint recommended + accessibility, inline templates, template rules and custom `@Component` sorting rules |
 | `@jeroenpol/eslint-config/typescript` | `eslint:recommended`, typescript-eslint, sonarjs, import sorting, duplicate and unused imports, focused tests |
 | `@jeroenpol/eslint-config/stylistic` | `@stylistic` code style |
 

@@ -1,11 +1,24 @@
 import angular from 'angular-eslint';
 
+import polware from '../custom-rules/index.mjs';
+
 export default function angularConfig() {
   return [
     ...angular.configs.tsRecommended.map((config) => ({
       ...config,
       files: ['**/*.ts'],
     })),
+    {
+      name: 'polware/angular/custom-rules',
+      files: ['**/*.ts'],
+      plugins: {
+        polware,
+      },
+      rules: {
+        'polware/sort-component-decorator-properties': 'error',
+        'polware/sort-standalone-imports': 'error',
+      },
+    },
     {
       name: 'polware/angular/inline-templates',
       files: ['**/*.ts'],
