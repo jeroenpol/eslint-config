@@ -114,6 +114,17 @@ describe('@jeroenpol/eslint-config', () => {
     ]);
   });
 
+  it('reports and autofixes custom component rules', async () => {
+    assertRules(await ruleIds('unsorted.component.ts'), [
+      'polware/sort-component-decorator-properties',
+      'polware/sort-standalone-imports',
+    ]);
+
+    const file = join(cwd, 'src/unsorted.component.ts');
+    const [result] = await createESLint({ fix: true }).lintText(await readFile(file, 'utf8'), { filePath: file });
+    assert.match(result.output, /selector: 'app-unsorted',\n {2}templateUrl: '\.\/app\.component\.html',\n {2}imports: \[AppComponent, InlineComponent\],/);
+  });
+
   it('reports angular template rules in inline templates', async () => {
     assertRules(await ruleIds('inline.component.ts'), ['@angular-eslint/template/button-has-type']);
   });

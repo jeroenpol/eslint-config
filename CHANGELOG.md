@@ -1,3 +1,7 @@
+3.1.0 / 2026-10-31
+==================
+ - [minor] Add custom rules `polware/sort-component-decorator-properties` and `polware/sort-standalone-imports` for Angular `@Component` decorators (enabled as `error` in the `angular` config, autofixable)
+
 3.0.0 / 2026-10-28
 ==================
  - [major] Require ESLint 10, Node.js ^20.19.0 || ^22.13.0 || >=24 and TypeScript >=5.8 <6.1
